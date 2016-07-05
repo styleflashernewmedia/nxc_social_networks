@@ -12,7 +12,7 @@ class nxcSocialNetworksOAuth2Facebook extends nxcSocialNetworksOAuth2
 
 	public function getPersistenceTokenScopes() {
 		$ini = eZINI::instance( 'nxcsocialnetworks.ini' );
-		$scopes = array( 'offline_access', 'publish_stream', 'read_stream', 'manage_pages' );
+		$scopes = array( 'user_posts', 'publish_pages', 'manage_pages' );
 		if( $ini->hasVariable( 'FacebookApplication', 'Scopes' ) ) {
 			$customScopes = explode( ',', $ini->variable( 'FacebookApplication', 'Scopes' ) );
 			if( !empty( $customScopes ) ) {
